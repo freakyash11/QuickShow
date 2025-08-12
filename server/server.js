@@ -1,13 +1,15 @@
 import express from 'express';
 import cors from 'cors';
-import 'dotenv/config';
 import connectDB from './configs/db.js';
 import { clerkMiddleware } from '@clerk/express'
 import { serve } from "inngest/express";
 import { inngest, functions } from "./inngest/index.js"
+import dotenv from 'dotenv';
+
+
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = 3000;
 
 await connectDB()
 app.use(express.json())
